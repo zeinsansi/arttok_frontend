@@ -35,6 +35,19 @@ jobs:
       - name: Install dependencies
         run: |
           npm install
+  sonarcloud:
+    name: SonarCloud
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.FRONT_END_TOKENN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      
   push_to_Docker_Hub:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
