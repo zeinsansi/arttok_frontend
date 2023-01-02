@@ -1,0 +1,8 @@
+
+{
+    "domain": "dev-l46gadjwvlvhuw0j.eu.auth0.com",
+    "clientId": "9Z0PYDS6SVOwDPXPePlr8JPuLLL9cDXg",
+    "scope": "openid profile email",
+    "audience": "https://dev-l46gadjwvlvhuw0j.eu.auth0.com/api/v2/"
+    
+}
