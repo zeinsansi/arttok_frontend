@@ -35,6 +35,11 @@ jobs:
       - name: Install dependencies
         run: |
           npm install
+      - name: Cypress run
+        uses: cypress-io/github-action@v5.x.x # use the explicit version number
+        with:
+          # Specify Browser since container image is compile with Firefox
+          browser: chrome
   sonarcloud:
     name: SonarCloud
     runs-on: ubuntu-latest
