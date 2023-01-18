@@ -52,6 +52,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.FRONT_END_TOKENN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      - name: Audit URLs using Lighthouse
+        uses: treosh/lighthouse-ci-action@v9
+        with:
+          urls:
+            http://localhost:3000/
       
   push_to_Docker_Hub:
     # The type of runner that the job will run on
